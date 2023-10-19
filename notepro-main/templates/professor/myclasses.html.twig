@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes classes{% endblock %}
+
+{% block body %}
+    <h1>Mes classes</h1>
+
+    <ul>
+        {% for classe in classes %}
+            <li>{{ classe.label }} <a href="{{ path('app_class_level_show', {id: classe.id}) }}"><button class="btn btn-secondary">Détails</button></a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
