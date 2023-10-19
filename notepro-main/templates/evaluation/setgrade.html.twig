@@ -7,6 +7,8 @@
 
     {{ form(form) }}
 
+    <p>Moyenne de l'évaluation : {{ evaluation.calculMoyenneEval() }}</p>
+
     <a href="{{ path('app_professor_evaluations', {id: app.user.id}) }}">Retour à la liste des évaluations</a>
 
 {% endblock %}

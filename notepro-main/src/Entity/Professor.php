@@ -24,8 +24,7 @@ class Professor extends User
         parent::__construct();
         $this->classLevels = new ArrayCollection();
         $this->evaluations = new ArrayCollection();
-        $this->subjects = new ArrayCollection();
-        $this->students = new ArrayCollection();
+
     }
 
     /**
@@ -109,21 +108,7 @@ class Professor extends User
         return $this;
     }
 
-    public function calculMoyenneEval()
-    {
-        $total = 0;
-        $count = 0;
 
-        foreach ($this->students as $student) {
-            $grades = $student->getGrades();
-            foreach ($grades as $grade) {
-                $total += $grade->getGrade();
-                $count++;
-            }
-        }
-
-        return $count > 0 ? $total / $count : 0;
-    }
 
 }
 

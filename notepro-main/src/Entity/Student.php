@@ -18,9 +18,7 @@ class Student extends User
     private ?ClassLevel $classLevel = null;
 
 
-     #[ORM\ManyToOne(Professor::class, inversedBy: "students")]
-     #[ORM\JoinColumn(nullable: true)]
-     private Professor $professor;
+
 
     public function __construct()
     {

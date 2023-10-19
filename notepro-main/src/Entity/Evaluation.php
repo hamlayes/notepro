@@ -161,4 +161,19 @@ class Evaluation
         }
         return null;
     }
+
+    public function calculMoyenneEval()
+    {
+        $total = 0;
+        $count = 0;
+
+        if ($this->grades instanceof Collection && $this->grades->count() > 0) {
+            foreach ($this->grades as $grade) {
+                $total += $grade->getGrade();
+                $count++;
+            }
+        }
+
+        return $count > 0 ? $total / $count : 0;
+    }
 }
